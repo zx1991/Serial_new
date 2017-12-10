@@ -1,0 +1,129 @@
+﻿<Window x:Class="Serial.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Serial"
+        mc:Ignorable="d"
+        Title="UVISIR Laser Control Software V1.0" Height="373.935" Width="803.922" Background="LightBlue">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="211" Margin="438,108,0,0" VerticalAlignment="Top" Width="348" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="211" Margin="304,108,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="211" Margin="10,108,0,0" VerticalAlignment="Top" Width="281" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.784"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Button x:Name="Connect" Content="Connect" HorizontalAlignment="Left" Height="22" Margin="438,73,0,0" VerticalAlignment="Top" Width="52" Click="Connect_Click"/>
+        <ComboBox x:Name="SerialList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="304,73,0,0"/>
+        <Label x:Name="LabelName" Content="UVISIR Laser Control Software V1.0" VerticalAlignment="Top" RenderTransformOrigin="8.228,2.091" Margin="256,27,257,0" HorizontalContentAlignment="Center" Width="279" Height="41" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="LableISet" Content="ISet:&#xA;" HorizontalAlignment="Left" Height="30" Margin="10,119,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableTchannel" Content="Tchannel:" HorizontalAlignment="Left" Height="30" Margin="10,209,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableImax" Content="Imax:" HorizontalAlignment="Left" Height="30" Margin="10,179,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableIactual" Content="Iactual:&#xA;" HorizontalAlignment="Left" Height="30" Margin="10,149,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableTactual" Content="Tactual(kΩ):" HorizontalAlignment="Left" Height="30" Margin="10,239,0,0" VerticalAlignment="Top" Width="80" FontSize="14"/>
+        <Label x:Name="LableTerror" Content="Terror(kΩ):" HorizontalAlignment="Left" Height="30" Margin="10,269,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableISetValue" Content="1234" HorizontalAlignment="Left" Height="30" Margin="85,119,0,0" VerticalAlignment="Top" Width="60" FontSize="14" Background="{x:Null}"/>
+        <Label x:Name="LableIactualValue" Content="1234.5" HorizontalAlignment="Left" Height="30" Margin="85,149,0,0" VerticalAlignment="Top" Width="60" FontSize="14"/>
+        <Label x:Name="LableImaxValue" Content="1234" HorizontalAlignment="Left" Height="30" Margin="85,179,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.521,3.181" FontSize="14"/>
+        <Label x:Name="LableTchannelValue" Content="1234" HorizontalAlignment="Left" Height="30" Margin="85,209,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.503,4.005" FontSize="14"/>
+        <Label x:Name="LableITactualValue" Content="1234.5" HorizontalAlignment="Left" Height="30" Margin="85,239,0,0" VerticalAlignment="Top" Width="60" FontSize="14"/>
+        <Label x:Name="LableTerrorValue" Content="1234.5" HorizontalAlignment="Left" Height="30" Margin="85,269,0,0" VerticalAlignment="Top" Width="60" FontSize="14"/>
+        <Label x:Name="LableRep" Content="Rep" HorizontalAlignment="Left" Height="30" Margin="145,119,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableTrigger" Content="trigger" HorizontalAlignment="Left" Height="30" Margin="145,149,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableDelay" Content="delay(us)" HorizontalAlignment="Left" Height="30" Margin="145,179,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableTset" Content="Tset(kΩ)" HorizontalAlignment="Left" Height="30" Margin="145,209,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableTenable" Content="Tenable" HorizontalAlignment="Left" Height="30" Margin="145,239,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableTstatus" Content="Tstatus" HorizontalAlignment="Left" Height="30" Margin="145,269,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LabelRepValue" Content="1234 Hz" HorizontalAlignment="Left" Height="30" Margin="225,119,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.951,0.475" FontSize="14"/>
+        <Label x:Name="LableTriggerValue" Content="Int" HorizontalAlignment="Left" Height="30" Margin="225,149,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableDelayValue" Content="1234" HorizontalAlignment="Left" Height="30" Margin="225,179,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableTsetValue" Content="1234.5" HorizontalAlignment="Left" Height="30" Margin="225,209,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableTenableValue" Content="Disable" HorizontalAlignment="Left" Height="30" Margin="225,239,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Label x:Name="LableTstatusValue" Content="OK" HorizontalAlignment="Left" Height="30" Margin="225,269,0,0" VerticalAlignment="Top" Width="75" FontSize="14"/>
+        <Ellipse x:Name="EllipseRunning" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="390,127,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="5.66,1.36"/>
+        <Ellipse x:Name="EllipseLocked" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="390,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="5.66,1.36"/>
+        <Ellipse x:Name="EllipseShutter" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="390,213,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="5.66,1.36"/>
+        <Ellipse x:Name="EllipseError" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Margin="390,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="5.66,1.36"/>
+        <Label x:Name="LableISet_Copy23" Content="running" HorizontalAlignment="Left" Height="30" Margin="315,122,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy24" Content="locked" HorizontalAlignment="Left" Height="30" Margin="315,165,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy25" Content="shutter" HorizontalAlignment="Left" Height="30" Margin="315,208,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy26" Content="error" HorizontalAlignment="Left" Height="30" Margin="315,251,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy27" Content="SELECT+" HorizontalAlignment="Left" Height="30" Margin="443,122,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy28" Content="VALUE+" HorizontalAlignment="Left" Height="30" Margin="527,122,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy29" Content="SELECT-" HorizontalAlignment="Left" Height="30" Margin="443,212,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy30" Content="VALUE-" HorizontalAlignment="Left" Height="30" Margin="527,212,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy31" Content="SHUTTER" HorizontalAlignment="Left" Height="30" Margin="612,212,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy32" Content="RUN/STOP" HorizontalAlignment="Left" Height="30" Margin="697,212,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="LableISet_Copy33" Content="LOCK" HorizontalAlignment="Left" Height="30" Margin="697,122,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Button x:Name="ButtonSelect_"  HorizontalAlignment="Left" Height="45" Margin="456,157,0,0" VerticalAlignment="Top" Width="45" Click="ButtonSelectP_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="plus.png"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="ButtonValue_"  HorizontalAlignment="Left" Height="45" Margin="541,157,0,0" VerticalAlignment="Top" Width="45" Click="ButtonValueP_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="plus.png"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="ButtonLock"  HorizontalAlignment="Left" Height="45" Margin="706,157,0,0" VerticalAlignment="Top" Width="45" Click="ButtonLock_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="lock.png"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="ButtonSelectM"  HorizontalAlignment="Left" Height="45" Margin="456,247,0,0" VerticalAlignment="Top" Width="45" Click="ButtonSelectM_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="minus.png"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="ButtonValue_1"  HorizontalAlignment="Left" Height="45" Margin="541,246,0,0" VerticalAlignment="Top" Width="45" Click="ButtonValueM_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="minus.png"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="ButtonShutter"  HorizontalAlignment="Left" Height="45" Margin="621,247,0,0" VerticalAlignment="Top" Width="45" Click="ButtonShutter_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="shutter.png"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="ButtonRun1" HorizontalAlignment="Left" Height="45" Margin="706,247,0,0" VerticalAlignment="Top" Width="45" Click="ButtonRun1_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="start.png"/>
+
+            </Button.Background>
+        </Button>
+        <Label x:Name="LableISet_Copy" Content="SAVE" HorizontalAlignment="Left" Height="30" Margin="612,122,0,0" VerticalAlignment="Top" Width="66" RenderTransformOrigin="0.951,0.475" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+        <Button x:Name="ButtonSave"  HorizontalAlignment="Left" Height="45" Margin="621,157,0,0" VerticalAlignment="Top" Width="45" Click="ButtonSave_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="save.png"/>
+
+            </Button.Background>
+        </Button>
+        <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Left" Height="22" Margin="511,73,0,0" VerticalAlignment="Top" Width="52" Click="Refresh_Click"/>
+        <Label x:Name="LabelConnectionStatus" Content="Connection Status:" HorizontalAlignment="Left" Height="30" Margin="591,69,0,0" VerticalAlignment="Top" Width="131" FontSize="14"/>
+        <Ellipse x:Name="EllipseConnection" HorizontalAlignment="Left" Height="25" Margin="727,69,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="5.66,1.36" Fill="#FFF4F4F5"/>
+
+    </Grid>
+</Window>
